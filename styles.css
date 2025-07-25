@@ -199,11 +199,10 @@ footer p {
 
 .lightbox-content {
     position: relative;
-    /* Usamos flex para centrar la imagen si es más pequeña que la pantalla */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100%; /* Asegura que el contenedor ocupe al menos toda la pantalla para centrar verticalmente */
+    /* Usamos padding en el contenedor y text-align para centrar la imagen.
+    Esto es más robusto en móviles que usar flexbox para este caso. */
+    padding: 2rem;
+    text-align: center;
 }
 
 .lightbox-content img {
@@ -211,7 +210,8 @@ footer p {
     max-width: none;
     max-height: none;
     border-radius: 8px;
-    margin: 2rem; /* Añadimos un margen para que la imagen no pegue a los bordes */
+    /* Usamos inline-block para que text-align: center funcione */
+    display: inline-block;
 }
 
 .lightbox-close {
