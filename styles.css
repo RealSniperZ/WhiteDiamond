@@ -193,28 +193,31 @@ footer p {
 
 /* Cuando el enlace apunta al ID del lightbox, se muestra */
 .lightbox-overlay:target {
-    display: flex;
+    display: block; /* Cambiamos a block para permitir el scroll */
+    overflow: auto; /* Permitimos el scroll en ambas direcciones */
 }
 
 .lightbox-content {
     position: relative;
-    padding: 1rem;
-    max-width: 90vw; /* Ancho máximo del 90% del viewport */
-    max-height: 90vh; /* Altura máxima del 90% del viewport */
+    /* Usamos flex para centrar la imagen si es más pequeña que la pantalla */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%; /* Asegura que el contenedor ocupe al menos toda la pantalla para centrar verticalmente */
 }
 
 .lightbox-content img {
-    max-width: 100%;
-    max-height: 100%;
-    height: auto;
-    width: auto;
+    /* Quitamos las restricciones para que la imagen se muestre en su tamaño real */
+    max-width: none;
+    max-height: none;
     border-radius: 8px;
+    margin: 2rem; /* Añadimos un margen para que la imagen no pegue a los bordes */
 }
 
 .lightbox-close {
-    position: absolute;
-    top: -10px;
-    right: 0;
+    position: fixed; /* La fijamos a la ventana para que siempre esté visible */
+    top: 20px;
+    right: 30px;
     font-size: 2.5rem;
     color: white;
     text-decoration: none;

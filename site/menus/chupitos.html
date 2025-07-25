@@ -29,10 +29,27 @@
 
     <main>
         <section>
-            <h2>Chupitos</h2>
-            <p>Aquí puedes añadir la lista de chupitos, descripciones y precios.</p>
+            <h2 class="text-center">Carta de Chupitos</h2>
+            <p class="text-center">Descubre nuestra variedad de chupitos.</p>
+
+            <div class="single-product-display">
+                <!-- Al hacer clic, se abrirá el visor con id "chupito1" -->
+                <a href="#chupito1" class="menu-item">
+                    <img src="../../img/menus/chupitos/1.jpg" alt="Menú de Chupitos">
+                    <div class="menu-item-name">
+                    </div>
+                </a>
+            </div>
         </section>
     </main>
+
+    <!-- Visor Lightbox (oculto por defecto) -->
+    <div id="chupito1" class="lightbox-overlay">
+        <div class="lightbox-content">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="../../img/menus/chupitos/1.jpg" alt="Menú de Chupitos en grande">
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 WhiteDiamond. Todos los derechos reservados.</p>
