@@ -97,7 +97,26 @@ footer {
     background-color: #34495e;
     color: white;
     text-align: center;
-    padding: 1.5rem 1rem;
+    padding: 1rem; /* Hacemos el pie de página más pequeño */
+}
+
+/* --- Estilos para los iconos de redes sociales en el footer --- */
+.social-media {
+    margin-top: 0.75rem; /* Espacio entre el copyright y los iconos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem; /* Espacio entre los iconos */
+}
+
+.social-icon {
+    height: 30px; /* Tamaño de los iconos */
+    width: 30px;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover {
+    opacity: 0.8; /* Efecto suave al pasar el ratón */
 }
 
 /* --- Estilos para la página de Menú --- */
