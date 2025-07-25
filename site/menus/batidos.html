@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Batidos</title>
+    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <nav>
+               <a href="../../index.html" class="nav-button">Inicio</a>
+                <a href="../informacion.html" class="nav-button">Informacion</a>
+                <a href="../menu.html" class="nav-button">Menu</a>
+            </nav>
+            <img src="../../img/logo.png" alt="Logo de la Empresa" class="logo">
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2 class="text-center">Batidos</h2>
+            <p class="text-center">Descubre nuestra selección de batidos frescos.</p>
+
+            <div class="single-product-display">
+                <!-- Al hacer clic, se abrirá el visor con id "batido1" -->
+                <a href="../../img/menus/batidos/smoothies.jpg" class="menu-item">
+                    <img src="../../img/menus/batidos/smoothies.jpg" alt="Batido de Fresa">
+                    <div class="menu-item-name">
+                        <h3>Batido de Fresa</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Visor Lightbox (oculto por defecto) -->
+    <div id="batido1" class="lightbox-overlay">
+        <div class="lightbox-content">
+            <a href="#" class="lightbox-close">&times;</a>
+            <img src="../../img/batido_fresa.png" alt="Batido de Fresa en grande">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Tu Nombre o Empresa. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

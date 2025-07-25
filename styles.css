@@ -1,0 +1,240 @@
+/* Estilos generales del cuerpo */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* --- Imagen de fondo para toda la página --- */
+    /* Reemplaza 'main-background.png' con la ruta a tu imagen de fondo */
+    background-image: url('/img/DeWatermark.ai_1753421845650.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
+    color: #333;
+}
+
+/* Estilos del encabezado */
+header {
+    /* El degradado oscuro se pone sobre la imagen para asegurar que el texto sea legible */
+    /* Reemplaza 'banner.jpg' con la ruta a tu imagen de banner */
+    background: linear-gradient(rgba(44, 62, 80, 0.6), rgba(44, 62, 80, 0.6)), url('./img/banner.jpg');
+    background-size: 100% 100%; /* Estira la imagen para que ocupe el 100% del ancho y 100% del alto del banner */
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    padding: 2rem 0; /* Aumentamos el padding para que el banner sea más alto */
+    position: relative;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pone el nav a la izquierda y el logo a la derecha */
+    padding: 0 1rem; /* Mantiene el espaciado en los bordes */
+}
+
+nav {
+    display: flex;
+    gap: 1rem; /* Espacio entre los botones */
+}
+
+.nav-button {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: white;
+    color: #2c3e50;
+}
+
+.logo {
+    height: 100px; /* Puedes ajustar esta altura */
+}
+
+/* Contenedor principal para el contenido */
+main {
+    flex: 1;
+    padding: 1rem;
+    max-width: 960px;
+    margin: 2rem auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilos para cada sección */
+section {
+    /* Hacemos el fondo de la sección semi-transparente para ver la imagen de fondo */
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+section h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+/* --- Clases de utilidad --- */
+.text-center {
+    text-align: center;
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
+/* --- Estilos para la página de Menú --- */
+.menu-grid {
+    display: grid;
+    /* Crea una cuadrícula responsive que se ajusta al tamaño de la pantalla */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.menu-item {
+    display: block;
+    position: relative;
+    overflow: hidden; /* Oculta las partes de la imagen que se salen al hacer zoom */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px); /* Eleva la tarjeta al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 250px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover img {
+    transform: scale(1.05); /* Efecto de zoom suave sobre la imagen */
+}
+
+.menu-item-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 2rem 1rem 1rem;
+}
+
+.menu-item-name h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+/* --- Estilos para el Lightbox (ver imagen en grande) --- */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: none; /* Oculto por defecto */
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+}
+
+/* Cuando el enlace apunta al ID del lightbox, se muestra */
+.lightbox-overlay:target {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    padding: 1rem;
+    max-width: 90vw; /* Ancho máximo del 90% del viewport */
+    max-height: 90vh; /* Altura máxima del 90% del viewport */
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    border-radius: 8px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    font-size: 2.5rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- Estilos para la página de Batidos (un solo producto) --- */
+.single-product-display {
+    max-width: 500px; /* Define un ancho máximo más grande para el producto */
+    margin: 2rem auto; /* Centra el contenedor en la sección */
+}
+
+.single-product-display .menu-item img {
+    height: 400px; /* Aumenta la altura de la imagen para que sea más grande */
+}
+
+/* --- Estilos para las secciones con imagen en index.html --- */
+.feature-content {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem; /* Espacio entre la imagen y el texto */
+}
+
+/* Invierte el orden para la imagen a la derecha */
+.feature-content.reverse {
+    flex-direction: row-reverse; 
+}
+
+.feature-image {
+    width: 40%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.feature-text {
+    flex: 1; /* El texto ocupa el espacio restante */
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+    .feature-content,
+    .feature-content.reverse {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        text-align: center;
+    }
+}
