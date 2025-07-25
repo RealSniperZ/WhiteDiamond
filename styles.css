@@ -96,23 +96,30 @@ section h2 {
 footer {
     background-color: #34495e;
     color: white;
-    text-align: center;
-    padding: 1rem; /* Hacemos el pie de página más pequeño */
+    padding: 1rem 1.5rem; /* Padding a los lados */
+    display: flex;
+    justify-content: space-between; /* Copyright a la izquierda, iconos a la derecha */
+    align-items: center;
+}
+
+footer p {
+    margin: 0; /* Quitamos el margen por defecto del párrafo */
 }
 
 /* --- Estilos para los iconos de redes sociales en el footer --- */
 .social-media {
-    margin-top: 0.75rem; /* Espacio entre el copyright y los iconos */
+    margin-top: 0; /* Ya no es necesario */
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 1.5rem; /* Espacio entre los iconos */
+    gap: 1rem; /* Espacio reducido entre iconos */
 }
 
 .social-icon {
-    height: 30px; /* Tamaño de los iconos */
-    width: 30px;
+    height: 28px; /* Más pequeños */
+    width: 28px;
+    border-radius: 50%; /* Redondos */
     transition: opacity 0.3s ease;
+    object-fit: cover; /* Para que la imagen se ajuste si no es cuadrada */
 }
 
 .social-icon:hover {
@@ -329,5 +336,13 @@ footer {
 
     .menu-toggle:checked + .menu-icon span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -8px);
+    }
+}
+
+/* Media query para el pie de página en pantallas muy pequeñas */
+@media (max-width: 520px) {
+    footer {
+        flex-direction: column;
+        gap: 0.75rem;
     }
 }
