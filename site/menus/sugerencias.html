@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Sugerencias</title>
+    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <img src="../../img/logo.png" alt="Logo de la Empresa" class="logo">
+            <!-- Elementos del menú hamburguesa -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav>
+               <a href="../../index.html" class="nav-button">Inicio</a>
+                <a href="../informacion.html" class="nav-button">Informacion</a>
+                <a href="../menu.html" class="nav-button">Menu</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h2 class="text-center">Sugerencias</h2>
+            <p class="text-center">Nuestras recomendaciones especiales. Haz clic para verlas en grande.</p>
+
+            <div class="menu-grid">
+                <!-- Sugerencia 1 -->
+                <a href="#sugerencia1" class="menu-item">
+                    <img src="../../img/menus/sugerencias/1.jpg" alt="Sugerencia 1">
+                    <div class="menu-item-name">
+                    </div>
+                </a>
+                <!-- Sugerencia 2 -->
+                <a href="#sugerencia2" class="menu-item">
+                    <img src="../../img/menus/sugerencias/2.jpg" alt="Sugerencia 2">
+                    <div class="menu-item-name">
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightboxes para cada sugerencia -->
+    <div id="sugerencia1" class="lightbox-overlay"><div class="lightbox-content"><a href="#" class="lightbox-close">&times;</a><img src="../../img/menus/sugerencias/1.jpg" alt="Sugerencia 1 en grande"></div></div>
+    <div id="sugerencia2" class="lightbox-overlay"><div class="lightbox-content"><a href="#" class="lightbox-close">&times;</a><img src="../../img/menus/sugerencias/2.jpg" alt="Sugerencia 2 en grande"></div></div>
+    <div id="sugerencia3" class="lightbox-overlay"><div class="lightbox-content"><a href="#" class="lightbox-close">&times;</a><img src="../../img/menus/sugerencias/3.jpg" alt="Sugerencia 3 en grande"></div></div>
+    <div id="sugerencia4" class="lightbox-overlay"><div class="lightbox-content"><a href="#" class="lightbox-close">&times;</a><img src="../../img/menus/sugerencias/4.jpg" alt="Sugerencia 4 en grande"></div></div>
+
+    <footer>
+        <p>&copy; 2025 WhiteDiamond. Todos los derechos reservados.</p>
+        <div class="social-media">
+            <!-- Reemplaza '#' con tus URLs reales y asegúrate de tener las imágenes en ../../img/icons/ -->
+            <a href="https://www.instagram.com/_white__diamond/" target="_blank"><img src="../../img/icons/instagram.png" alt="Instagram" class="social-icon"></a>
+            <a href="https://www.facebook.com/people/Whitee-diamond/100076437841814/" target="_blank"><img src="../../img/icons/facebook.png" alt="Facebook" class="social-icon"></a>
+        </div>
+    </footer>
+
+</body>
+</html>

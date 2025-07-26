@@ -242,7 +242,7 @@ footer p {
 /* --- Estilos para las secciones con imagen en index.html --- */
 .feature-content {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Alinea los elementos al inicio (arriba) */
     gap: 2.5rem; /* Espacio entre la imagen y el texto */
 }
 
@@ -262,6 +262,12 @@ footer p {
 
 .feature-text {
     flex: 1; /* El texto ocupa el espacio restante */
+}
+
+/* Hacemos las imágenes de las secciones 2 y 3 un poco más pequeñas */
+#seccion2 .feature-image,
+#seccion3 .feature-image {
+    max-width: 360px;
 }
 
 /* --- Estilos para el Menú Hamburguesa (oculto en escritorio) --- */
