@@ -185,24 +185,30 @@ footer p {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.85);
-    display: none; /* Oculto por defecto */
-    align-items: center;
-    justify-content: center;
+    display: none;
     z-index: 1000; /* Asegura que esté por encima de todo */
 }
 
 /* Cuando el enlace apunta al ID del lightbox, se muestra */
 .lightbox-overlay:target {
-    display: block; /* Cambiamos a block para permitir el scroll */
-    overflow: auto; /* Permitimos el scroll en ambas direcciones */
+    display: block; /* Se muestra como bloque */
+    /* Habilitamos el scroll vertical si el contenido es más alto que la pantalla */
+    overflow-y: auto;
+    /* Ocultamos el scroll horizontal para evitar problemas en móvil */
+    overflow-x: hidden;
 }
 
 .lightbox-content {
-    position: relative;
-    /* Usamos padding en el contenedor y text-align para centrar la imagen.
-    Esto es más robusto en móviles que usar flexbox para este caso. */
-    padding: 2rem;
-    text-align: center;
+    /* Usamos flexbox para centrar la imagen vertical y horizontalmente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* El contenedor debe tener al menos la altura de la pantalla para que el centrado vertical funcione */
+    min-height: 100%;
+    /* Añadimos un padding para que la imagen no toque los bordes */
+    padding: 1rem;
+    /* ¡LA CLAVE! Esto asegura que el padding se incluya en el ancho total y no cause desbordamiento */
+    box-sizing: border-box;
 }
 
 .lightbox-content img {
@@ -210,8 +216,6 @@ footer p {
     max-width: 100%; /* La imagen no será más ancha que su contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
     border-radius: 8px;
-    /* Usamos inline-block para que text-align: center funcione */
-    display: inline-block;
 }
 
 .lightbox-close {
@@ -222,6 +226,7 @@ footer p {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    z-index: 1001; /* Debe estar por encima del contenido del lightbox */
 }
 
 /* --- Estilos para la página de Batidos (un solo producto) --- */
