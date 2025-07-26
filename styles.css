@@ -206,9 +206,9 @@ footer p {
 }
 
 .lightbox-content img {
-    /* Quitamos las restricciones para que la imagen se muestre en su tamaño real */
-    max-width: none;
-    max-height: none;
+    /* Hacemos la imagen responsive dentro del lightbox */
+    max-width: 100%; /* La imagen no será más ancha que su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
     border-radius: 8px;
     /* Usamos inline-block para que text-align: center funcione */
     display: inline-block;
