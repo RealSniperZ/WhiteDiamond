@@ -1,6 +1,6 @@
 /* Estilos generales del cuerpo */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -14,12 +14,16 @@ body {
     color: #333;
 }
 
+h1, h2, h3, h4, h5, h6, .nav-button, .cta-button {
+    font-family: 'Playfair Display', serif;
+}
+
 /* Estilos del encabezado */
 header {
     /* El degradado oscuro se pone sobre la imagen para asegurar que el texto sea legible */
     /* Reemplaza 'banner.jpg' con la ruta a tu imagen de banner */
     background: linear-gradient(rgba(44, 62, 80, 0.6), rgba(44, 62, 80, 0.6)), url('./img/banner.jpg');
-    background-size: 100% 100%; /* Estira la imagen para que ocupe el 100% del ancho y 100% del alto del banner */
+    background-size: cover; /* La imagen cubre el área sin deformarse, mejor para responsive */
     background-repeat: no-repeat;
     background-position: center;
     color: white;
@@ -69,7 +73,7 @@ main {
 }
 
 /* Estilos para cada sección */
-section {
+main section {
     /* Hacemos el fondo de la sección semi-transparente para ver la imagen de fondo */
     background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid #ddd;
@@ -79,7 +83,7 @@ section {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-section h2 {
+main section h2 {
     color: #2c3e50;
     border-bottom: 2px solid #ecf0f1;
     padding-bottom: 0.5rem;
@@ -282,6 +286,46 @@ footer p {
     left: 0;
 }
 
+/* --- Estilos para la sección de Llamada a la Acción (CTA) --- */
+.cta-section {
+    text-align: center;
+    background-color: rgba(52, 73, 94, 0.9); 
+    color: white;
+    padding: 2rem 1.5rem; /* Añadimos padding propio para que el contenido respire */
+}
+
+.cta-section h2 {
+    color: white;
+    border-bottom: none;
+}
+
+.cta-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap; /* Para que los botones se apilen en móvil */
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    border: 2px solid white;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: white;
+}
+
 /* Hacemos las imágenes de las secciones 2 y 3 un poco más pequeñas */
 #seccion2 .feature-image,
 #seccion3 .feature-image {
@@ -416,6 +460,15 @@ footer p {
     .info-details {
         background-color: transparent;
         padding: 1.5rem 0 0 0; /* Solo un poco de espacio arriba */
+    }
+
+    /* Ajustamos el banner y la sección CTA para que no sean tan grandes en móvil */
+    header {
+        padding: 1.5rem 0;
+    }
+
+    .cta-section h2 {
+        font-size: 1.8rem; /* Reducimos el tamaño del título en la CTA */
     }
 }
 
