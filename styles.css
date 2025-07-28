@@ -321,11 +321,12 @@ footer p {
 
     /* --- Estilos para el menú de navegación en móvil --- */
     .header-container {
-        padding: 0 1rem;
+        padding: 0 1rem; /* Mantiene el espaciado en los bordes */
+        justify-content: flex-end; /* Alinea el icono del menú a la derecha */
     }
 
     .logo {
-        height: 70px; /* Hacemos el logo un poco más pequeño */
+        display: none; /* Ocultamos el logo en la vista móvil */
     }
 
     .menu-icon {
