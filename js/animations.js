@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Seleccionamos todos los elementos que queremos animar
-    const elementsToAnimate = document.querySelectorAll('.feature-section, .menu-item, .info-layout > div');
+    const elementsToAnimate = document.querySelectorAll('.feature-section, .menu-item');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
